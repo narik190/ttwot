@@ -2,7 +2,7 @@
 
  /*** error reporting on ***/
 
-// error_reporting(0);
+ error_reporting(0);
 
 /*** define the constants ***/
 define('DS', '/');
