@@ -1,0 +1,70 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^politicana\.com$ [NC]
+RewriteRule ^(.*)$ http://www.politicana.com/$1 [L,R=301]
+
+RewriteRule ^home$ ?rt=index
+RewriteRule ^access$ ?rt=index&show=access
+
+RewriteRule ^politicanapolls$ ?rt=index/politicanapolls&%{QUERY_STRING}
+RewriteRule ^candidates$ ?rt=index/candidates
+RewriteRule ^latestvideos$ ?rt=index/latestvideos
+
+RewriteRule ^poll/upload_image$ ?rt=polls/upload_image
+RewriteRule ^poll_report/(.*)$ ?rt=polls/poll_report&poll_id=$1
+
+RewriteRule ^polls$ ?rt=polls
+
+RewriteRule ^poll/(.*)/(.*)$ ?rt=polls/poll&poll_id=$1&access_from=$2
+
+RewriteRule ^candidate_profile/(.*)$ ?rt=polls/candidate_profile&candidate_id=$1
+RewriteRule ^compare_candidates/(.*)$ ?rt=polls/compare_candidates&candidate_id=$1
+
+RewriteRule ^site_access/(.*)$ ?rt=polls/site_access&show=$1
+
+
+
+
+RewriteRule ^registration$ ?rt=useraccount/registration
+RewriteRule ^account$ ?rt=useraccount/account
+RewriteRule ^account/(.*)/page/(.*)$ ?rt=useraccount/$1&start=$2
+RewriteRule ^account/(.*)/(.*)$ ?rt=useraccount/$1&val=$2
+RewriteRule ^account/(.*)$ ?rt=useraccount/$1
+
+
+RewriteRule ^login$ ?rt=useraccount/login
+RewriteRule ^fblogin/(.*)/change/(.*)/(.*)/(.*)$ ?rt=useraccount/fblogin&name=$2&fb_id=$3&email_id=$4&from=fb&action=$1_change
+RewriteRule ^fblogin/(.*)/(.*)/(.*)-(.*)$ ?rt=useraccount/fblogin&name=$1&fb_id=$2&email_id=$3&from=fb&redirect=$4
+RewriteRule ^gpluslogin/(.*)/(.*)/(.*)-(.*)$ ?rt=useraccount/gpluslogin&name=$1&gplus_id=$2&email_id=$3&from=gplus&redirect=$4
+
+
+
+RewriteRule ^about-us$ ?rt=index/about_us&cms_id=1
+RewriteRule ^terms-of-use$ ?rt=index/terms_of_use&cms_id=2
+RewriteRule ^privacy-policy$ ?rt=index/privacy_policy&cms_id=4
+RewriteRule ^contact-us$ ?rt=index/contact_us
+RewriteRule ^faq$ ?rt=index/faq&cms_id=8
+RewriteRule ^feedback$ ?rt=index/feedback
+
+RewriteRule ^subscribe$ ?rt=index/subscribe
+RewriteRule ^democrats$ ?rt=polls/demo_votes&title=Democrats-polls&ppcid=5
+RewriteRule ^republicans$ ?rt=polls/demo_votes&title=Republicans-polls&ppcid=6
+RewriteRule ^democrats-details$ ?rt=index/parties_information&ppcid=5
+RewriteRule ^democrats-details/(.*)/(.*)$ ?rt=index/parties_information&ppcid=5&cid=$2&cname=$1
+RewriteRule ^republicans-details$ ?rt=index/parties_information&ppcid=6
+RewriteRule ^republicans-details/(.*)/(.*)$ ?rt=index/parties_information&ppcid=6&cid=$2&cname=$1
+RewriteRule ^discussion-zone/(.*)/(.*)$ ?rt=index/discussion_inner_zone&did=$2&dtitle=$1
+RewriteRule ^discussion-zone$ ?rt=index/discussion_zone
+RewriteRule ^brain-test$ ?rt=index/brain_test
+RewriteRule ^presidential-election-vote/(.*)$ ?rt=index/social_network&sc=$1
+RewriteRule debate/(.*)/(.*)$ ?rt=index/debates&ppcid=$2
+RewriteRule ^presidential_parties$ ?rt=index/presidential_parties
+
+
+
+#RewriteRule ^sell/(.*)/(.*)/$ ?rt=sell/search&%{QUERY_STRING}&category=$1&search=$2&qs=$3
+#The below lines for references
+#RewriteRule ^user/account$ ?rt=myaccount
+#RewriteRule ^activation/(.*)$ ?rt=activation&act=$1
+#RewriteRule ^useraccess/(.*)/(.*)/(.*)$ ?rt=orderverification&rid=$1&ord_num=$2&type=$3

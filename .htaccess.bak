@@ -1,0 +1,28 @@
+Options +FollowSymLinks
+RewriteEngine On
+
+RewriteRule ^save_staff/$ ?rt=index/save_staff&%{QUERY_STRING}
+RewriteRule ^get_staff/$ ?rt=index/get_staff&%{QUERY_STRING}
+RewriteRule ^update_staff/$ ?rt=index/update_staff&%{QUERY_STRING}
+RewriteRule ^get_staff_authorize/$ ?rt=index/get_staff_authorize&%{QUERY_STRING}
+RewriteRule ^get_admin_dashboard/$ ?rt=index/get_admin_dashboard&%{QUERY_STRING}
+RewriteRule ^get_orders/$ ?rt=index/get_orders&%{QUERY_STRING}
+RewriteRule ^get_orders_detail/$ ?rt=index/get_orders_detail&%{QUERY_STRING}
+RewriteRule ^get_staff_list/$ ?rt=index/get_staff_list&%{QUERY_STRING}
+RewriteRule ^get_staff_list_details/$ ?rt=index/get_staff_list_details&%{QUERY_STRING}
+RewriteRule ^remove_staff/$ ?rt=index/remove_staff&%{QUERY_STRING}
+RewriteRule ^manager_save_staff/$ ?rt=index/manager_save_staff&%{QUERY_STRING}
+RewriteRule ^user_approve/$ ?rt=index/user_approve&%{QUERY_STRING}
+RewriteRule ^user_approve_list/$ ?rt=index/user_approve_list&%{QUERY_STRING}
+RewriteRule ^get_manager_dashboard/$ ?rt=index/get_manager_dashboard&%{QUERY_STRING}
+RewriteRule ^get_sorter_list/$ ?rt=index/get_sorter_list&%{QUERY_STRING}
+RewriteRule ^assign_order_cook/$ ?rt=index/assign_order_cook&%{QUERY_STRING}
+RewriteRule ^get_sorter_dashboard/$ ?rt=index/get_sorter_dashboard&%{QUERY_STRING}
+RewriteRule ^get_sorter_orders_detail/$ ?rt=index/get_sorter_orders_detail&%{QUERY_STRING}
+RewriteRule ^assign_cook_pick/$ ?rt=index/assign_cook_pick&%{QUERY_STRING}
+RewriteRule ^db_track/$ ?rt=index/db_track&%{QUERY_STRING}
+RewriteRule ^get_DB_list/$ ?rt=index/get_DB_list&%{QUERY_STRING}
+RewriteRule ^assign_order_db/$ ?rt=index/assign_order_db&%{QUERY_STRING}
+RewriteRule ^get_db_dashboard/$ ?rt=index/get_db_dashboard&%{QUERY_STRING}
+RewriteRule ^get_db_orders_detail/$ ?rt=index/get_db_orders_detail&%{QUERY_STRING}
+RewriteRule ^assign_pick_del/$ ?rt=index/assign_pick_del&%{QUERY_STRING}
